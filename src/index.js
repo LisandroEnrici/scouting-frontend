@@ -1,10 +1,13 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import './index.css';
+import { CssBaseline, ThemeProvider, createTheme } from '@material-ui/core';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <div></div>
-  </React.StrictMode>
+const theme = createTheme();
+
+ReactDOM.render(
+  <ThemeProvider theme={theme}>
+    <CssBaseline />
+  </ThemeProvider>,
+  document.getElementById('root')
 );
