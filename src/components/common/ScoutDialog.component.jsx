@@ -3,18 +3,21 @@ import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContentText from '@material-ui/core/DialogContentText';
-import DialogTitle from '@material-ui/core/DialogTitle';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { useTheme } from '@material-ui/core/styles';
 import MailIcon from '@material-ui/icons/Mail';
-import { Divider, Grid, makeStyles } from '@material-ui/core';
+import { Box, Divider, Grid, Typography, makeStyles } from '@material-ui/core';
 import LocationTag from './LocationTag.component';
 import defaultImg from '../../assets/defaultProfilePicture.png'
+import SkillTag from './SkillTag.component';
 
 const useStyles = makeStyles((theme) => ({
-
-    dialogContent: {
-        display: 'flex'
+    titleContainer: {
+        display: 'flex',
+        height: '50px',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        padding: '0 20px 0 20px',
     },
     img: {
         maxHeight: '150px',
@@ -55,17 +58,19 @@ export default function ScoutDialog({ scout, open, handleClose, handleClickConta
             open={open}
             onClose={handleClose}
             aria-labelledby="scoutDialog"
-            className={classes.main}
         >
-            <DialogTitle id="scoutDialog" >
-                {scout?.name}
-            </DialogTitle>
+            <Box className={classes.titleContainer}>
+                <Typography variant='h6'>
+                    {scout?.name}
+                </Typography>
+                <SkillTag relocatable={scout?.relocatable} videoanalytic={scout?.videoanalytic} />
+            </Box>
             <Divider />
             <Grid container justifyContent='center' alignItems='center' className={classes.contentContainer}>
                 <Grid item className={classes.column} alignItems='center' md={4} xs={12}>
                     <img
                         src={scout.image || defaultImg}
-                        alt='Profile photo'
+                        alt='Profile'
                         className={classes.img}
                     />
                 </Grid>
