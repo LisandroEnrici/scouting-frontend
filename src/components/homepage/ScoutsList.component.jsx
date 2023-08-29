@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Grid, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
-import ScoutCard from './ScoutCard.component';
+import ScoutCardContainer from '../../containers/homepage/ScoutCard.container';
 
 const useStyles = makeStyles((theme) => ({
     main: {
@@ -22,11 +22,12 @@ export default function ScoutsList({ scoutsList }) {
             <Grid container justifyContent='center' spacing={3} >
                 {scoutsList.map((scout) => {
                     return (
-                        <Grid item style={{display:'flex', justifyContent:'center'}} md={4} sm={6} xs={12}>
-                            <ScoutCard scout={scout} key={scout.id} />
+                        <Grid item style={{ display: 'flex', justifyContent: 'center' }} md={4} sm={6} xs={12}>
+                            <ScoutCardContainer scout={scout} key={scout.id} />
                         </Grid>
                     )
-                })}
+                })
+                }
             </Grid>
         </Box>
     )

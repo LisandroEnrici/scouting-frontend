@@ -35,12 +35,12 @@ const useStyles = makeStyles({
   }
 });
 
-export default function ScoutCard({ scout }) {
+export default function ScoutCard({ scout, handleClickInfo }) {
   const classes = useStyles();
 
   return (
     <Card className={classes.root}>
-      <CardActionArea >
+      <CardActionArea onClick={handleClickInfo}>
         <CardMedia
           className={classes.media}
           image={scout.image || defaultImg}
