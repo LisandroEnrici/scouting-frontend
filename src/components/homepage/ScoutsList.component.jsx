@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Typography } from '@material-ui/core';
+import { Box, Grid, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import ScoutCard from './ScoutCard.component';
 
@@ -15,16 +15,19 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 export default function ScoutsList({ scoutsList }) {
-    const classes = useStyles()
-    console.log(scoutsList)
+    const classes = useStyles();
 
     return (
         <Box className={classes.main}>
-            {scoutsList.map((scout) => {
-                return (
-                    <ScoutCard scout={scout} key={scout.id} />
-                )
-            })}
+            <Grid container justifyContent='center' spacing={3} >
+                {scoutsList.map((scout) => {
+                    return (
+                        <Grid item style={{display:'flex', justifyContent:'center'}} md={4} sm={6} xs={12}>
+                            <ScoutCard scout={scout} key={scout.id} />
+                        </Grid>
+                    )
+                })}
+            </Grid>
         </Box>
     )
 }
