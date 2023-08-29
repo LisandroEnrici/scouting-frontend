@@ -10,7 +10,7 @@ export default function ScoutCardContainer({ scout }) {
     };
 
     const handleClickContact = () => {
-        return;
+        window.location = 'mailto:' + scout?.email;
     };
 
     const handleClose = () => {
@@ -19,8 +19,8 @@ export default function ScoutCardContainer({ scout }) {
 
     return (
         <>
-            <ScoutCard scout={scout} handleClickInfo={handleClickInfo } />
-            <ScoutDialog scout={scout} open={openDialog} handleClose={handleClose} />
+            <ScoutCard scout={scout} handleClickInfo={handleClickInfo} handleClickContact={handleClickContact} />
+            <ScoutDialog scout={scout} open={openDialog} handleClose={handleClose} handleClickContact={handleClickContact} />
         </>
     )
 }

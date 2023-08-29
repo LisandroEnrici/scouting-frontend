@@ -35,7 +35,7 @@ const useStyles = makeStyles({
   }
 });
 
-export default function ScoutCard({ scout, handleClickInfo }) {
+export default function ScoutCard({ scout, handleClickInfo, handleClickContact }) {
   const classes = useStyles();
 
   return (
@@ -57,7 +57,7 @@ export default function ScoutCard({ scout, handleClickInfo }) {
         </CardContent>
       </CardActionArea>
       <CardActions className={classes.actions}>
-        <Button color='primary' variant='contained' endIcon={<MailIcon />}>
+        <Button color='primary' variant='contained' endIcon={<MailIcon />} onClick={handleClickContact} >
           Contact
         </Button>
       </CardActions>

@@ -44,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 
-export default function ScoutDialog({ scout, open, handleClose }) {
+export default function ScoutDialog({ scout, open, handleClose, handleClickContact }) {
     const theme = useTheme();
     const classes = useStyles(theme);
     const fullScreen = useMediaQuery(theme.breakpoints.down('sm'));
@@ -57,7 +57,9 @@ export default function ScoutDialog({ scout, open, handleClose }) {
             aria-labelledby="scoutDialog"
             className={classes.main}
         >
-            <DialogTitle id="scoutDialog">{scout?.name}</DialogTitle>
+            <DialogTitle id="scoutDialog" >
+                {scout?.name}
+            </DialogTitle>
             <Divider />
             <Grid container justifyContent='center' alignItems='center' className={classes.contentContainer}>
                 <Grid item className={classes.column} alignItems='center' md={4} xs={12}>
@@ -79,7 +81,7 @@ export default function ScoutDialog({ scout, open, handleClose }) {
                 <Button color='secondary' variant='contained' onClick={handleClose}>
                     Close
                 </Button>
-                <Button color='primary' variant='contained' endIcon={<MailIcon />}>
+                <Button color='primary' variant='contained' endIcon={<MailIcon />} onClick={handleClickContact}>
                     Contact
                 </Button>
             </DialogActions>
