@@ -18,10 +18,11 @@ const useStyles = makeStyles((theme) => ({
     },
     img: {
         maxHeight: '150px',
+        maxWidth: '150px',
         borderRadius: '5px'
     },
     contentContainer: {
-        [theme.breakpoints.up('md')]: {
+        [theme.breakpoints.down('md')]: {
             height: '-webkit-fill-available'
         }
     },
@@ -58,7 +59,7 @@ export default function ScoutDialog({ scout, open, handleClose }) {
         >
             <DialogTitle id="scoutDialog">{scout?.name}</DialogTitle>
             <Divider />
-            <Grid container justifyContent='center' alignItems='center' >
+            <Grid container justifyContent='center' alignItems='center' className={classes.contentContainer}>
                 <Grid item className={classes.column} alignItems='center' md={4} xs={12}>
                     <img
                         src={scout.image || defaultImg}
