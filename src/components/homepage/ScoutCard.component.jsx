@@ -10,8 +10,7 @@ import Typography from '@material-ui/core/Typography';
 import LimitedTypography from '../common/LimitedTypography.component';
 import LocationTag from '../common/LocationTag.component';
 import MailIcon from '@material-ui/icons/Mail';
-import { IconButton } from '@material-ui/core';
-import PersonAddIcon from '@material-ui/icons/PersonAdd';
+import defaultImg from'../../assets/defaultProfilePicture.png';
 
 const DESCRIPTION_LIMIT = 160
 
@@ -41,10 +40,10 @@ export default function ScoutCard({ scout }) {
 
   return (
     <Card className={classes.root}>
-      <CardActionArea>
+      <CardActionArea >
         <CardMedia
           className={classes.media}
-          image='https://cdn5.vectorstock.com/i/1000x1000/19/89/male-profile-icon-white-on-the-blue-background-vector-3451989.jpg'
+          image={scout.image || defaultImg}
           title='Profile photo'
         />
         <CardContent className={classes.content}>
@@ -58,10 +57,7 @@ export default function ScoutCard({ scout }) {
         </CardContent>
       </CardActionArea>
       <CardActions className={classes.actions}>
-      <IconButton aria-label='add to My Scouts' color='secondary'>
-        <PersonAddIcon />
-      </IconButton>
-        <Button color='primary' variant='contained' endIcon={<MailIcon/>}>
+        <Button color='primary' variant='contained' endIcon={<MailIcon />}>
           Contact
         </Button>
       </CardActions>
