@@ -13,6 +13,6 @@ export const getScouts = function() {
             return res.json();
         })
         .then(data => data)
-        .catch(error => { console.error('Error:', error); return { data: [], ok: false } })
+        .catch(error => { console.error('Error:', error); return [] })
     return (result)
 }

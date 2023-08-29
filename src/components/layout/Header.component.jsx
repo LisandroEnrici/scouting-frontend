@@ -9,8 +9,8 @@ const useStyles = makeStyles(() => ({
         background: '#ffffff',
     },
     toolBar: {
-        width: '80%',
-        minWidth: '400px',
+        width: '100%',
+        maxWidth: '1000px',
         height: '45px',
         minHeight: 'unset'       
     }

@@ -9,19 +9,17 @@ const useStyles = makeStyles(() => ({
         flexDirection: 'column',
         alignItems: 'center',
         height: '100vh',
-        width: '100%',
         backgroundImage: `url(${scoutingBG})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundColor: 'white',
-        overflowY: 'scroll',
+        overflowY: 'scroll'
     },
     contentContainer: {
         display: 'flex',
         flexDirection: 'column',
         width: '100%',
-        maxWidth: '1000px',
-        height: '100%'
+        maxWidth: '1000px'
     }
 }));
 
