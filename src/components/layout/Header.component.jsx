@@ -26,7 +26,7 @@ export default function Header() {
     return (
         <AppBar position="sticky" className={classes.appBar}>
             <Toolbar className={classes.toolBar} >
-                <img src={LogoImg} alt="scoutingLogo"/>
+                <img className={classes.logoImg} src={LogoImg} alt="scoutingLogo"/>
             </Toolbar>
         </AppBar>
     );
