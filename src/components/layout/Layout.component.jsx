@@ -21,7 +21,6 @@ const useStyles = makeStyles(() => ({
         flexDirection: 'column',
         width: '100%',
         maxWidth: '1000px',
-        backgroundColor: 'white',
         height: '100%'
     }
 }));

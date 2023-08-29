@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { getScouts } from '../../webServices/webServices.controller';
-import { Typography } from '@material-ui/core';
+import ScoutsList from '../../components/homepage/ScoutsList.component';
 
 export default function ScoutsListContainer() {
     const [scoutsList, setScoutsList] = useState([]);
@@ -15,12 +15,6 @@ export default function ScoutsListContainer() {
     }, [])
 
     return (
-        scoutsList.map((scout) => {
-            return (
-                <Typography >
-                    {scout.name}
-                </Typography>
-            )
-        })
+        <ScoutsList scoutsList={scoutsList} />
     )
 }
